@@ -27,12 +27,15 @@ function chooseElement(human){
                             ["Rock crushes lizard","Lizard eats paper","Scissors decapitates lizard","Are the same","Lizard poisons Spock"],
                             ["Spock vaporizes rock","Paper disproves Spock","Spock smashes scissors","Lizard poisons Spock","Are the same"]
                         ];              
+    
     // CPU chooses a random item betwen 0 and 4 
     const cpu = Math.floor((Math.random() * 5));
     // Game result. 
     const game_result = board_game[cpu][human];
+    
     // Message to be reproduced by the browser                    
-    const message = new SpeechSynthesisUtterance(`You choose ${elements[human]}, and the CPU choose ${elements[cpu]}. So you ${result[game_result]}, because ${descrip_game[human][cpu]} `)                       
+    const message = new SpeechSynthesisUtterance(`You choose ${elements[human]}, and the CPU choose ${elements[cpu]}. So you ${result[game_result]}, because ${descrip_game[human][cpu]} `)                        
+    message.lang = 'en-US'
     window.speechSynthesis.speak(message)
 
 
