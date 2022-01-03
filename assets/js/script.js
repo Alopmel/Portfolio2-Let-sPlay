@@ -1,3 +1,8 @@
+
+/**
+ * The variables that save the possible results and the elements that can be chosen are created.
+ * A two-dimensional array is created in which the result of the choice of the user and the CPU is calculated
+ */
 function chooseElement(human){
 
     // Contains the result values
@@ -11,14 +16,24 @@ function chooseElement(human){
                         [1,2,0,2,1],
                         [1,2,1,0,2],
                         [2,1,2,1,0]
-                    ]
+                    ];
     
-    // CPU chooses a random item
-    const cpu = Math.floor((Math.random() * 5));
-    // Game result 
 
+    // Game description
+    const descrip_game = [
+                            ["Are the same", "Paper covers rock", "Rock crushes scissors", "Rock crushes lizard", "Spock vaporizes rock"],
+                            ["Paper covers rock", "Are the same", "Scissors cuts paper", "Lizard eats paper", "Paper disproves Spock"],
+                            ["Rock crushes scissors","Scissors cuts paper","Are the same","Scissors decapitates lizard","Spock smashes scissors"],
+                            ["Rock crushes lizard","Lizard eats paper","Scissors decapitates lizard","Are the same","Lizard poisons Spock"],
+                            ["Spock vaporizes rock","Paper disproves Spock","Spock smashes scissors","Lizard poisons Spock","Are the same"]
+                        ];              
+    // CPU chooses a random item betwen 0 and 4 
+    const cpu = Math.floor((Math.random() * 5));
+    // Game result. 
     const game_result = board_game[cpu][human];
-    console.log("Human: " + elements[human])
-    console.log("CPU: " + elements[cpu])
-    console.log(result[game_result])
+    // Message to be reproduced by the browser                    
+    const message = new SpeechSynthesisUtterance(`You choose ${elements[human]}, and the CPU choose ${elements[cpu]}. So you ${result[game_result]}, because ${descrip_game[human][cpu]} `)                       
+    window.speechSynthesis.speak(message)
+
+
 }
