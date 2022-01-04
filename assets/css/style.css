@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*background-color: #EFEFEF;*/
     font-family: sans-serif;
 }
 
@@ -11,8 +10,8 @@
 .container{
     margin: 0 auto;
     height: 100%;
-    width: 80%;
-    background-color: red;
+    width: 70%;
+    background-color: #EFEFEF;
 }
 
 .group-btn{

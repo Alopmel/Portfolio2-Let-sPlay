@@ -1,4 +1,6 @@
-
+const resultText = document.getElementById("result-message");
+const human_img = document.getElementById("human-img");
+const cpu_img = document.getElementById("cpu-img");
 /**
  * The variables that save the possible results and the elements that can be chosen are created.
  * A two-dimensional array is created in which the result of the choice of the user and the CPU is calculated
@@ -8,7 +10,7 @@ function chooseElement(human){
     // Contains the result values
     const result = ["tie","win","loose"]
     // Contains all elements
-    const elements = ["Rock","Paper","Scissors","Lizard","Spock"]
+    const elements = ["rock","paper","scissors","lizard","spock"]
     // A two-dimensional array where the game is encoded. The columns are the user's movement and the rows are those of the computer. The numbers are the result.
     const board_game = [
                         [0,1,2,2,1],
@@ -32,11 +34,18 @@ function chooseElement(human){
     const cpu = Math.floor((Math.random() * 5));
     // Game result. 
     const game_result = board_game[cpu][human];
-    
-    // Message to be reproduced by the browser                    
-    const message = new SpeechSynthesisUtterance(`You choose ${elements[human]}, and the CPU choose ${elements[cpu]}. So you ${result[game_result]}, because ${descrip_game[human][cpu]} `)                        
-    message.lang = 'en-US'
-    window.speechSynthesis.speak(message)
 
+    // Add the result in the html
+    resultText.innerHTML = game_result
+
+    // Create the path of the image chosen by the user and the cpu
+    human_img = "img/"+elements[human]+".png";
+    cpu_img = "img/"+elements[cpu]+".png";
+    console.log(game_result)
+    // Message to be reproduced by the browser                    
+    //const message = new SpeechSynthesisUtterance(`You choose ${elements[human]}, and the CPU choose ${elements[cpu]}. So you ${result[game_result]}, because ${descrip_game[human][cpu]} `)                        
+    //message.lang = 'en-US'
+    //window.speechSynthesis.speak(message)
+                        
 
 }
