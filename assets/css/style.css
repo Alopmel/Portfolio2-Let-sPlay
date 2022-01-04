@@ -9,10 +9,9 @@
 /* IMAGES STYLE */
 
 .container{
-    max-width: 420px;
-    height: 100vh;
-    max-height: 745px;
     margin: 0 auto;
+    height: 100%;
+    width: 80%;
     background-color: red;
 }
 
@@ -47,8 +46,4 @@ h1{
     padding: 20px;
 }
 
-/* DIV RESULT STYLE */
 
-#result{
-    height: 50vh;
-}
