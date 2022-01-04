@@ -36,12 +36,12 @@ function chooseElement(human){
     const game_result = board_game[cpu][human];
 
     // Add the result in the html
-    resultText.innerHTML = game_result
+    resultText.innerHTML = `You ${result[game_result]}, because ${descrip_game[human][cpu]} `
 
     // Create the path of the image chosen by the user and the cpu
-    human_img = "img/"+elements[human]+".png";
-    cpu_img = "img/"+elements[cpu]+".png";
-    console.log(game_result)
+    human_img.src = "assets/images/"+elements[human]+".png";
+    cpu_img.src = "assets/images/"+elements[cpu]+".png";
+
     // Message to be reproduced by the browser                    
     //const message = new SpeechSynthesisUtterance(`You choose ${elements[human]}, and the CPU choose ${elements[cpu]}. So you ${result[game_result]}, because ${descrip_game[human][cpu]} `)                        
     //message.lang = 'en-US'
