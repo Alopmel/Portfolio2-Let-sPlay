@@ -1,6 +1,7 @@
 const buttons = document.querySelectorAll(".btn-elements");
 const cpu_img = document.getElementById("cpu-img");
 const resultText = document.getElementById("result-message");
+const descriptionText = document.getElementById("description-message");
 const scoreP = document.getElementById("score");
 const user_img = document.getElementById("human-img");
 
@@ -69,7 +70,8 @@ buttons.forEach(button => {
 
 // Insert the result obtained and the selected images on the screen
 function addOnDom(){
-    resultText.innerHTML = `You ${result[game_result]}. <br> ${descrip_game[cpu][user]}`
+    resultText.innerHTML = `${result[game_result]}`
+    descriptionText.innerHTML = descrip_game[cpu][user]
     // Create a variable path
     user_img.src = "assets/images/"+choices[user]+".png";
     cpu_img.src = "assets/images/"+choices[cpu]+".png";  
@@ -85,7 +87,7 @@ function updateScore(value){
 function checkWinner(){
 
     if(game_result == 2 ) {         // 2 is equal to loose
-        if (score >= 1) {           
+        if (score > 1) {           
             updateScore(-1);        // one is subtracted from the score
         } else {                    // If it is zero, you cannot continue to rest and you lose
             alert("You loose")

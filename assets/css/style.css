@@ -6,14 +6,14 @@
 }
 
 /* IMAGES STYLE */
-
+/*
 .container{
     margin: 0 auto;
     height: 100%;
     width: 70%;
     background-color: #EFEFEF;
 }
-
+*/
 .group-btn{
     display: flex;
     justify-content: center;
@@ -45,16 +45,41 @@ h1{
     padding: 20px;
 }
 
-#result-message{
-    font-size: 26px;
-    text-align: center;
-    padding: 20px;
-}
+/*STYLE SECTION SELECTION*/
 
-/*STYLE DIV RESULT */
-
-.element-selection{
+.selection{
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
 }
+
+#description-message{
+    text-align: center;
+}
+
+.win-loose{
+    font-size: 2.1rem;
+    margin: 0 0 20px;
+    line-height: 0.8;
+    text-transform: uppercase;
+}
+
+.btn-reset{
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    color: hsl(229, 25%, 31%);
+    font-size: 20px;
+    font-family: inherit;
+    padding: 10px 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
 

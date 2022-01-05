@@ -14,9 +14,9 @@
         </h1>
         <h4>Score</h4>
         <p id="score"></p>
-        <div class="start-text">
+        <h3 class="start-text">
             Choose an option
-        </div>
+        </h3>
            
         <div class="group-btn">
             <button class="btn-elements" data-choice="0">
@@ -34,23 +34,40 @@
             <button class="btn-elements" data-choice="4">
                 <img src="assets/images/spock.png" alt="Spock-hand image">
             </button>
+        </div>           
+    </section>
+
+    <section class="container">
+        <div>
+            <h3 id="description-message">
+            <!-- Show the description of the game-->
+            </h3>    
         </div>
-        <div id="result-message"> </div>
-        <div class="element-selection">
+        
+        <div class="selection">
             <div>
                 <h1>
-                    CPU
+                    You Picked
                 </h1>
                 <img id="cpu-img" src="assets/images/spock.png" alt="Spock-hand image">
             </div>
             <div>
+                <p class="win-loose">
+                    You
+                    <span id="result-message"> 
+                        <!-- Show the result of the game-->
+                    </span>
+                </p>                
+                <button class="btn-reset" id="reset">Play Again</button>
+            </div>
+            <div>
                 <h1>
-                    YOU
+                    The House Picked
                 </h1>
                 <img id="human-img" src="assets/images/spock.png" alt="Spock-hand image">
-            </div>        
+            </div>
         </div>
-           
+                    
     </section>
     </body>
     <script src="assets/js/script.js"></script>
