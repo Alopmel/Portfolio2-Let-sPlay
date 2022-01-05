@@ -45,4 +45,16 @@ h1{
     padding: 20px;
 }
 
+#result-message{
+    font-size: 26px;
+    text-align: center;
+    padding: 20px;
+}
+
+/*STYLE DIV RESULT */
+
+.element-selection{
+    display: flex;
+    justify-content: space-around;
+}
 
