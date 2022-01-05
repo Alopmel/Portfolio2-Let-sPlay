@@ -48,7 +48,6 @@ function pickRandomChoise(){
     return Math.floor(Math.random() * 5)
 }
 
-
 /*
 *
 * Every time that click a button, you collect the added value in data-choise
@@ -63,6 +62,7 @@ buttons.forEach(button => {
         game_result = board_game[cpu][user]
 
         addOnDom();
+        checkWinner();
     });
 })
 
@@ -73,6 +73,31 @@ function addOnDom(){
     // Create a variable path
     user_img.src = "assets/images/"+choices[user]+".png";
     cpu_img.src = "assets/images/"+choices[cpu]+".png";  
+}
+
+// Update and insert the score on the screen
+function updateScore(value){
+    score += value;
+    scoreP.innerText = score
+}
+
+// Validate who wins
+function checkWinner(){
+
+    if(game_result == 2 ) {         // 2 is equal to loose
+        if (score >= 1) {           
+            updateScore(-1);        // one is subtracted from the score
+        } else {                    // If it is zero, you cannot continue to rest and you lose
+            alert("You loose")
+        }   
+    }
+     
+     else if (game_result == 1) {   // 1 is equal to win 
+        updateScore(1)              // Add one to the score         
+     }
+     else {
+         score = score;             // When it is tie the score remains the same
+     }
 }
 
 /**
