@@ -2,86 +2,48 @@ const resultText = document.getElementById("result-message");
 const user_img = document.getElementById("human-img");
 const cpu_img = document.getElementById("cpu-img");
 const scoreP = document.getElementById("score");
-const buttons = document.querySelectorAll(".btn-elements")
+
+//Global Variables
+let score = 0;
+const result = ["tie","win","loose"]                            // Contains the result values
+const choices = ["rock","paper","scissors","lizard","spock"]    // Contains all elements
+
 const board_game = [
-    [0,1,2,2,1],
-    [2,0,1,1,2],
-    [1,2,0,2,1],
+    [0,1,2,2,1],            // A two-dimensional array where the game is encoded.
+    [2,0,1,1,2],            // The columns are the user's movement and the rows
+    [1,2,0,2,1],            // are those of the computer. The numbers are the result.
     [1,2,1,0,2],
     [2,1,2,1,0]
 ];
-const result = ["tie","win","loose"]
-const choices = ["rock","paper","scissors","lizard","spock"]
-let cpu = 0;
-const cpChioce = choices[cpu];
-let score = 0;
+const descrip_game = [      // Game description
+    ["Are the same", "Paper covers rock", "Rock crushes scissors", 
+     "Rock crushes lizard", "Spock vaporizes rock"],
+    ["Paper covers rock", "Are the same", "Scissors cuts paper", 
+     "Lizard eats paper", "Paper disproves Spock"],
+    ["Rock crushes scissors","Scissors cuts paper","Are the same",
+     "Scissors decapitates lizard","Spock smashes scissors"],
+    ["Rock crushes lizard","Lizard eats paper","Scissors decapitates lizard",
+     "Are the same","Lizard poisons Spock"],
+    ["Spock vaporizes rock","Paper disproves Spock","Spock smashes scissors",
+     "Lizard poisons Spock","Are the same"]
+];
+
+// Variables to save CPU and user choices and the result
+let cpu = 0; 
 let user = 0;
+const cpChioce = choices[cpu];
 console.log(`CPNUMBER: ${cpu}`)
 console.log(`CPElEMENT: ${cpChioce}`)
 let game_result = 0;
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        user = button.getAttribute('data-choice');
-        
-        innerText();
-    });
-})
 
-function innerText(){
-    cpu = pickRandomChoise();
-    console.log(`CP:${cpu}`)
-    game_result = board_game[cpu][user]
-    console.log(`CORRESPOND NUMBER RESULT: ${game_result}`)
-    resultText.innerHTML = `You ${result[game_result]}. <br> ${descrip_game[cpu][user]}`
-    user_img.src = "assets/images/"+choices[user]+".png";
-    cpu_img.src = "assets/images/"+choices[cpu]+".png";  
-    console.log(result[game_result])
-    console.log(descrip_game[cpu][user])
-    checkWinner();
-}
 
-function checkWinner(){
+/*
+* Create a random number.
+* It is used to give value to the choice of CPU
+*/ 
 
-    if(game_result == 2 ) {
-        if (score >= 1) {
-            updateScore(-1); 
-        } else {
-            alert("You loose")
-        }   
-    }
-     
-     else if (game_result == 1) {
-        updateScore(1)
-     }
-     else {
-         score = score;
-     }
-}
-
-console.log(user)
-function updateScore(value){
-    score += value;
-    scoreP.innerText = score
-}
 function pickRandomChoise(){
     return Math.floor(Math.random() * 5)
-}
-
-
-// Game description
-const descrip_game = [
-    ["Are the same", "Paper covers rock", "Rock crushes scissors", "Rock crushes lizard", "Spock vaporizes rock"],
-    ["Paper covers rock", "Are the same", "Scissors cuts paper", "Lizard eats paper", "Paper disproves Spock"],
-    ["Rock crushes scissors","Scissors cuts paper","Are the same","Scissors decapitates lizard","Spock smashes scissors"],
-    ["Rock crushes lizard","Lizard eats paper","Scissors decapitates lizard","Are the same","Lizard poisons Spock"],
-    ["Spock vaporizes rock","Paper disproves Spock","Spock smashes scissors","Lizard poisons Spock","Are the same"]
-];
-function getText(){
-    const game_result = board_game[cpu][user]
-    console.log(`CORRESPOND NUMBER RESULT: ${game_result}`)
-    result[game_result]
-    console.log(result[game_result])
-    console.log(descrip_game[cpu][user])
 }
 /**
 }
