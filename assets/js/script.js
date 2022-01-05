@@ -1,7 +1,10 @@
-const resultText = document.getElementById("result-message");
-const user_img = document.getElementById("human-img");
+const buttons = document.querySelectorAll(".btn-elements");
 const cpu_img = document.getElementById("cpu-img");
+const resultText = document.getElementById("result-message");
 const scoreP = document.getElementById("score");
+const user_img = document.getElementById("human-img");
+
+
 
 //Global Variables
 let score = 0;
@@ -41,10 +44,20 @@ let game_result = 0;
 * Create a random number.
 * It is used to give value to the choice of CPU
 */ 
-
 function pickRandomChoise(){
     return Math.floor(Math.random() * 5)
 }
+
+
+// Every time that click a button, you collect the added value in data-choise
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        user = button.getAttribute('data-choice'); 
+    });
+})
+
+
+
 /**
 }
 
