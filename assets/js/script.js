@@ -1,7 +1,10 @@
 const buttons = document.querySelectorAll(".btn-elements");
 const cpu_img = document.getElementById("cpu-img");
-const resultText = document.getElementById("result-message");
 const descriptionText = document.getElementById("description-message");
+const main = document.getElementById("main");
+const reset = document.getElementById("reset");
+const resultText = document.getElementById("result-message");
+const section = document.getElementById("section");
 const scoreP = document.getElementById("score");
 const user_img = document.getElementById("human-img");
 
@@ -61,15 +64,13 @@ buttons.forEach(button => {
         user = button.getAttribute('data-choice');
         cpu = pickRandomChoise();
         game_result = board_game[cpu][user]
-
         addOnDom();
         checkWinner();
     });
 })
 
-
 // Insert the result obtained and the selected images on the screen
-function addOnDom(){
+function addOnDom(){   
     resultText.innerHTML = `${result[game_result]}`
     descriptionText.innerHTML = descrip_game[cpu][user]
     // Create a variable path
@@ -100,6 +101,11 @@ function checkWinner(){
      else {
          score = score;             // When it is tie the score remains the same
      }
+
+     //Show the selection || Hide the main
+     main.style.display = "none";
+     section.style.display = "block";
+
 }
 
 /**

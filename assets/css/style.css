@@ -58,6 +58,10 @@ h1{
     flex-wrap: wrap;
 }
 
+#section{
+    display: none;
+}
+
 #description-message{
     text-align: center;
 }
