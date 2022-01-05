@@ -73,7 +73,7 @@ buttons.forEach(button => {
 // Reset hide the section and show the main
 reset.addEventListener('click', ()=>{
     main.style.display = "block";
-    section.style.display = "none"; 
+    section.style.display = "none";     
 })
 // Insert the result obtained and the selected images on the screen
 function addOnDom(){   
@@ -93,15 +93,14 @@ function updateScore(value){
 // Validate who wins
 function checkWinner(){
 
-    if(game_result == 2 ) {         // 2 is equal to loose
-        if (score > 1) {           
-            updateScore(-1);        // one is subtracted from the score
-        } else {                    // If it is zero, you cannot continue to rest and you lose
-            alert("You loose")
+    if(game_result == 2 ) {         // 2 is equal to loose        
+        if (score == 1) { 
+            alert("You loose")      // one is subtracted from the score              
+        } else {
+            console.log(`Dentro del if: ${score}`)
+            updateScore(-1);           
         }   
-    }
-     
-     else if (game_result == 1) {   // 1 is equal to win 
+    } else if (game_result == 1) {   // 1 is equal to win 
         updateScore(1)              // Add one to the score         
      }
      else {
@@ -111,5 +110,4 @@ function checkWinner(){
      //Show the selection || Hide the main
      main.style.display = "none";
      section.style.display = "block";
-
 }
