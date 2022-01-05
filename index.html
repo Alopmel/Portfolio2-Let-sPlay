@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <main class="container" id="main">
+    <main class="container">
         <header>
             <div class="text-header">
               <h1>
@@ -28,29 +28,31 @@
                 <p id="score"> 10 </p>   
             </div>              
         </header>
-        
-        <h3 class="start-text">
-            Choose an option
-        </h3>
-           
-        <div class="group-btn">
-            <button class="btn-elements" data-choice="0">
+    </main>
+        <section class="group-btn"  id="main">
+            <div class="btn-up">
+              <button class="btn-elements btn-red" data-choice="0">
                 <img src="assets/images/rock.png" class="white" alt="Rock-hand image">
-            </button>
-            <button class="btn-elements" data-choice="1">
+            </button>  
+            </div>
+            <div class="btn-middle">
+              <button class="btn-elements btn-yellow" data-choice="1">
                 <img src="assets/images/paper.png" alt="Paper-hand image">
             </button>
-            <button class="btn-elements" data-choice="2">
+            <button class="btn-elements btn-purple" data-choice="2">
                 <img src="assets/images/scissors.png" alt="Scissors-hand image">
-            </button>
-            <button class="btn-elements" data-choice="3">
+            </button>  
+            </div>
+            <div class="btn-bottom">
+              <button class="btn-elements btn-green" data-choice="3">
                 <img src="assets/images/lizard.png" alt="Lizard-hand image">
             </button>
-            <button class="btn-elements" data-choice="4">
+            <button class="btn-elements btn-blue" data-choice="4">
                 <img src="assets/images/spock.png" alt="Spock-hand image">
-            </button>
-        </div>           
-    </main>
+            </button>  
+            </div>            
+        </section>           
+    
 
     <section class="container" id="section">
         <div>
