@@ -69,6 +69,12 @@ buttons.forEach(button => {
     });
 })
 
+
+// Reset hide the section and show the main
+reset.addEventListener('click', ()=>{
+    main.style.display = "block";
+    section.style.display = "none"; 
+})
 // Insert the result obtained and the selected images on the screen
 function addOnDom(){   
     resultText.innerHTML = `${result[game_result]}`
