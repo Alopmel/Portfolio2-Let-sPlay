@@ -49,14 +49,31 @@ function pickRandomChoise(){
 }
 
 
-// Every time that click a button, you collect the added value in data-choise
+/*
+*
+* Every time that click a button, you collect the added value in data-choise
+* CPU choice is updated
+* We obtain the result of the game
+* 
+*/
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-        user = button.getAttribute('data-choice'); 
+        user = button.getAttribute('data-choice');
+        cpu = pickRandomChoise();
+        game_result = board_game[cpu][user]
+
+        addOnDom();
     });
 })
 
 
+// Insert the result obtained and the selected images on the screen
+function addOnDom(){
+    resultText.innerHTML = `You ${result[game_result]}. <br> ${descrip_game[cpu][user]}`
+    // Create a variable path
+    user_img.src = "assets/images/"+choices[user]+".png";
+    cpu_img.src = "assets/images/"+choices[cpu]+".png";  
+}
 
 /**
 }
