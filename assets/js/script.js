@@ -1,14 +1,15 @@
 const buttons = document.querySelectorAll(".btn-elements");
 const cpu_img = document.getElementById("cpu-img");
+const close = document.getElementById('close');
 const descriptionText = document.getElementById("description-message");
 const main = document.getElementById("main");
+const modal_container = document.getElementById('modal_container');
 const reset = document.getElementById("reset");
 const resultText = document.getElementById("result-message");
 const section = document.getElementById("section");
 const scoreP = document.getElementById("score");
+const open = document.getElementById('open');
 const user_img = document.getElementById("human-img");
-
-
 
 //Global Variables
 let score = 0;
@@ -67,7 +68,8 @@ buttons.forEach(button => {
         addOnDom();
         checkWinner();
     });
-})
+})   
+
 
 
 // Reset hide the section and show the main
@@ -94,11 +96,11 @@ function updateScore(value){
 function checkWinner(){
 
     if(game_result == 2 ) {         // 2 is equal to loose        
-        if (score == 1) { 
-            alert("You loose")      // one is subtracted from the score              
+        if (score == 0) { 
+            scoreP.innerText = 0;            
         } else {
             console.log(`Dentro del if: ${score}`)
-            updateScore(-1);           
+            updateScore(-1);       // one is subtracted from the score      
         }   
     } else if (game_result == 1) {   // 1 is equal to win 
         updateScore(1)              // Add one to the score         
@@ -111,3 +113,13 @@ function checkWinner(){
      main.style.display = "none";
      section.style.display = "block";
 }
+
+// Code to open the modal window of the game rules
+open.addEventListener('click', () => {
+    modal_container.classList.add('show');  
+  });
+  
+close.addEventListener('click', () => {
+    modal_container.classList.remove('show');
+  });
+
