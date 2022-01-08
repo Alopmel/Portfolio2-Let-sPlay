@@ -79,7 +79,6 @@ h4{
 
 .group-btn img:hover{
     transform: scale(0.8);
-    text-shadow: inset 3px 4px 5px #000;
 }
 
 .group-btn img{
@@ -248,7 +247,6 @@ footer{
 }
   
 .show {
-    pointer-events: auto;
     opacity: 1;
 }
   

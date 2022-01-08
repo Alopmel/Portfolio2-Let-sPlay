@@ -1,6 +1,6 @@
 const buttons = document.querySelectorAll(".btn-elements");
 const cpu_img = document.getElementById("cpu-img");
-const close = document.getElementById('close');
+const closeModal = document.getElementById('close');
 const descriptionText = document.getElementById("description-message");
 const main = document.getElementById("main");
 const modal_container = document.getElementById('modal_container');
@@ -8,13 +8,13 @@ const reset = document.getElementById("reset");
 const resultText = document.getElementById("result-message");
 const section = document.getElementById("section");
 const scoreP = document.getElementById("score");
-const open = document.getElementById('open');
+const openModal = document.getElementById('open');
 const user_img = document.getElementById("human-img");
 
 //Global Variables
 let score = 0;
-const result = ["tie","win","loose"]                            // Contains the result values
-const choices = ["rock","paper","scissors","lizard","spock"]    // Contains all elements
+const result = ["tie","win","loose"];                           // Contains the result values
+const choices = ["rock","paper","scissors","lizard","spock"];   // Contains all elements
 
 const board_game = [
     [0,1,2,2,1],            // A two-dimensional array where the game is encoded.
@@ -39,9 +39,6 @@ const descrip_game = [      // Game description
 // Variables to save CPU and user choices and the result
 let cpu = 0; 
 let user = 0;
-const cpChioce = choices[cpu];
-console.log(`CPNUMBER: ${cpu}`)
-console.log(`CPElEMENT: ${cpChioce}`)
 let game_result = 0;
 
 
@@ -50,7 +47,7 @@ let game_result = 0;
 * It is used to give value to the choice of CPU
 */ 
 function pickRandomChoise(){
-    return Math.floor(Math.random() * 5)
+    return Math.floor(Math.random() * 5);
 }
 
 /*
@@ -64,11 +61,11 @@ buttons.forEach(button => {
     button.addEventListener('click', () => {
         user = button.getAttribute('data-choice');
         cpu = pickRandomChoise();
-        game_result = board_game[cpu][user]
+        game_result = board_game[cpu][user];
         addOnDom();
         checkWinner();
     });
-})   
+});   
 
 
 
@@ -76,11 +73,11 @@ buttons.forEach(button => {
 reset.addEventListener('click', ()=>{
     main.style.display = "block";
     section.style.display = "none";     
-})
+});
 // Insert the result obtained and the selected images on the screen
 function addOnDom(){   
-    resultText.innerHTML = `${result[game_result]}`
-    descriptionText.innerHTML = descrip_game[cpu][user]
+    resultText.innerHTML = `${result[game_result]}`;
+    descriptionText.innerHTML = descrip_game[cpu][user];
     // Create a variable path
     user_img.src = "assets/images/"+choices[user]+".png";
     cpu_img.src = "assets/images/"+choices[cpu]+".png";  
@@ -89,7 +86,7 @@ function addOnDom(){
 // Update and insert the score on the screen
 function updateScore(value){
     score += value;
-    scoreP.innerText = score
+    scoreP.innerText = score;
 }
 
 // Validate who wins
@@ -99,11 +96,10 @@ function checkWinner(){
         if (score == 0) { 
             scoreP.innerText = 0;            
         } else {
-            console.log(`Dentro del if: ${score}`)
             updateScore(-1);       // one is subtracted from the score      
         }   
     } else if (game_result == 1) {   // 1 is equal to win 
-        updateScore(1)              // Add one to the score         
+        updateScore(1);              // Add one to the score         
      }
      else {
          score = score;             // When it is tie the score remains the same
@@ -115,11 +111,10 @@ function checkWinner(){
 }
 
 // Code to open the modal window of the game rules
-open.addEventListener('click', () => {
+openModal.addEventListener('click', () => {
     modal_container.classList.add('show');  
   });
   
-close.addEventListener('click', () => {
+closeModal.addEventListener('click', () => {
     modal_container.classList.remove('show');
   });
-
