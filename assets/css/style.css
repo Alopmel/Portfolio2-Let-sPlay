@@ -20,7 +20,7 @@ body{
 
 .container{
     margin: 0 auto;
-    width: 70%;
+    width: 90%;
     max-width: 100%;
 
 }
@@ -40,8 +40,9 @@ header{
     display: flex;
     align-items: center;
 }
-h1{
-    margin: 0;
+
+.title-text{
+    margin: 18px;
     display: flex;
     line-height: 0.8;
     font-size: 2rem;
@@ -70,26 +71,15 @@ h4{
     margin: 0;
 }
 
-
 /* MAIN STYLE */
-/*.group-btn{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.group-btn > button{
-    margin: 15px;
-    border: 0;
-}
-.group-btn > button:hover{
-    -webkit-transform:scale(1.3);
-    transform:scale(1.3);
-    transition: .5s ease-in-out
-}*/
 .group-btn{
     width: 40%;
     margin: auto;
+}
+
+.group-btn img:hover{
+    transform: scale(0.8);
+    text-shadow: inset 3px 4px 5px #000;
 }
 
 .group-btn img{
@@ -167,9 +157,9 @@ h4{
     padding: 20px;
 }
 
-h1{
+.img-selected{
     text-align: center;
-    font-size: 35px;
+    font-size: 28px;
     padding: 20px;
 }
 
@@ -185,12 +175,20 @@ h1{
     flex-wrap: wrap;
 }
 
+.btn-selected{
+    width: 150px;
+}
+
+.container-selection{
+    width: 33%;
+}
 #section{
     display: none;
 }
 
 #description-message{
     text-align: center;
+    font-size: 1.8rem;
 }
 
 .win-loose{
@@ -294,4 +292,91 @@ ul{
     left:40%;
 }
 
+/* RESPONSIVE STYLE */
+
+@media screen and (max-width: 1000px){
+    .group-btn {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 760px ){
+    .group-btn {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 655px){
+    .group-btn {
+        width: 61%;
+    }
+    
+    .title-text{
+        font-size: 23px;
+        padding: 7px;
+    }
+    
+    .score-container {
+        padding: 21px  20px;
+    }
+    .btn-reset {
+        font-size: 15px;
+        padding: 10px 7px;
+    }
+
+    .btn-selected {
+        width: 120px;
+    }
+
+    .container-selection {
+        margin-bottom: 20px;
+    }
+
+    .modal {
+        width: 510px;
+        max-width: 90%;
+        padding: 9px 20px;
+    }
+    .btn-middle {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-bottom {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .btn-elements {
+        border: none;
+        margin: 5px;
+        border-radius: 50%;
+    }
+}
+
+
+@media screen and (max-width: 500px){
+    .title-text {
+        font-size: 1.5rem;
+        padding: 4px;
+    }
+    .score-container {
+        padding: 1px 10px;
+    }
+
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .group-btn img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .container-selection {
+        width: 100%;
+    }
+}
 
