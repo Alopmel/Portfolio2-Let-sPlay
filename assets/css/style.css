@@ -271,12 +271,12 @@ footer{
 
 ul{
     opacity: 0.7;
-    font-size: 15px;
+    font-size: 18px;
     margin: 15px;
 }
 .modal p {
     opacity: 0.7;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .btn-close{
@@ -390,5 +390,7 @@ ul{
     .container-selection {
         width: 100%;
     }
+
+    
 }
 
