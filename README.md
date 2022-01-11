@@ -61,4 +61,22 @@ To play you must choose one of the available elements and the machine will choos
 
     * Tested on mobile devices, the game works. The user can interact with the game on a touch screen.
     
-    * The dimensions are also correct. The images and letters are sized appropriately so that the user can clearly differentiate them and have space to interact with the different elements.
+    * The dimensions are also correct. The letters are the right size for reading, the rules are explained simply and clearly. 
+    
+    * The button images are clear and intuitive and they are the correct size. On mobile, you can interact and press buttons with ease and space.
+
+    * I used the lighthouse test to confirm that the page is responsive, accessible and complies with the established standards for its correct operation.
+
+<img src="assets\images\lighthouse.png" width="800">
+
+## BUGS
+
+    * I ran into the following error in console:
+**Failed to load resource: the server responded with a status of 400 ()**
+
+    * It occurred because in the imported link for the font when putting the weight I separated it with a quotation mark.
+
+<img src="assets\images\fonts.png" width="800">
+
+    * I solved it by putting **"&"** between 600 and 700 to separate both thicknesses.
+    
