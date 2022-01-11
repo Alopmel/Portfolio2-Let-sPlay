@@ -112,7 +112,7 @@ No unfixed bugs
 
     * Finally, selecting the branch creates a link that takes me to my web page.
 
-[You can access the page through this link](https://alopmel.github.io/Portfolio2-Let-sPlay/)
+     * [You can access the page through this link](https://alopmel.github.io/Portfolio2-Let-sPlay/)
 
 ## CREDITS
 
