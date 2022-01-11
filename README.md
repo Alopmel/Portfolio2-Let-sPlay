@@ -53,4 +53,12 @@ To play you must choose one of the available elements and the machine will choos
 
 <img src="assets\images\rules.png" width="500">
 
+## TESTING 
 
+    * I have tested the game on Firefox, Microsoft Edge, and Chrome.
+    
+    * In all search engines, it works correctly, it also maintains the same font and dimensions to adapt to various devices. So it is confirmed to be responsive.
+
+    * Tested on mobile devices, the game works. The user can interact with the game on a touch screen.
+    
+    * The dimensions are also correct. The images and letters are sized appropriately so that the user can clearly differentiate them and have space to interact with the different elements.

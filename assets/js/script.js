@@ -1,6 +1,6 @@
 const buttons = document.querySelectorAll(".btn-elements");
 const cpu_img = document.getElementById("cpu-img");
-const closeModal = document.getElementById('close');
+const close = document.getElementById('close');
 const descriptionText = document.getElementById("description-message");
 const main = document.getElementById("main");
 const modal_container = document.getElementById('modal_container');
@@ -8,7 +8,7 @@ const reset = document.getElementById("reset");
 const resultText = document.getElementById("result-message");
 const section = document.getElementById("section");
 const scoreP = document.getElementById("score");
-const openModal = document.getElementById('open');
+const open = document.getElementById('open');
 const user_img = document.getElementById("human-img");
 
 //Global Variables
@@ -111,10 +111,10 @@ function checkWinner(){
 }
 
 // Code to open the modal window of the game rules
-openModal.addEventListener('click', () => {
+open.addEventListener('click', () => {
     modal_container.classList.add('show');  
   });
   
-closeModal.addEventListener('click', () => {
+  close.addEventListener('click', () => {
     modal_container.classList.remove('show');
   });
